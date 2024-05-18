@@ -1,0 +1,205 @@
+
+/* .formulario{
+    margin: 0;
+    padding: 0;
+} */
+
+.formulario-background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.formulario-header{
+    width: 100vw;
+    height: 4.5rem;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    border-bottom: 2px solid #FF7300;
+}
+
+.formulario-header-usuario {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.formulario-header-usuario>img{
+    width: 2.4rem;
+    margin-right: 10px;
+}
+.formulario-header-txt{
+    margin-top: 20px;
+    position: relative;
+    color: #fff;
+}
+
+.container-perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 25px;
+
+}
+
+.formulario-header-perfil{
+    height: 60px;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.formulario-header-perfil>img{
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+}
+
+.container-button {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .container-button.mostrar {
+    opacity: 1;
+  }
+
+.container-button>button{
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: #fff;
+    padding-top: 8px;
+}
+.container-button>button:hover{
+    border: 1px solid #FF7300;
+    color: #FF7300;
+}
+
+.formulario-header-perfil>p{
+    bottom: 10px;
+    padding-left: 6px;
+}
+
+.Contact-inner{
+    position: relative;
+    z-index: 5;
+    /* background-color: coral; */
+    /* width: 45vw; */
+}
+
+.Contact-inner>.title{
+    color: #fff;
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 25px;
+    line-height: 23px;
+    text-align: center;
+}
+
+/* .Contact-inner-form{
+    width: 100%;
+} */
+
+.Contact-inner-controls{
+    width: 100%;
+    margin: 0 0 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.Contact-inner-input{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+}
+
+.full{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.select-custom{
+    width: 100%;
+}
+
+/* .select-custom>.css-4tf25z-control{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.select-custom>.css-4tf25z-control:hover{
+    border-color: #fff;
+} */
+
+/* #react-select-3-placeholder{
+    font-family: system-ui;
+
+} */
+
+.Contact-inner-controls>textarea{
+    width: 99%;
+    height: 100px;
+}
+
+textarea{
+    border: 0;
+}
+/* css-4tf25z-control */
+.Contact-inner-controls{
+    display: flex;
+    justify-content: center;
+}
+
+.Contact-inner-input>label, .Contact-inner-controls>label{
+    font-weight: 500;
+    font-size: 12pt;
+    color: #fff;
+}
+
+.Contact-inner-input>input{
+    border: 0;
+    border-radius: 4px;
+    height: 30px;
+}
+
+.Contact-inner-form>button{
+    width: 100%;
+    height: 40px;
+    background-color: #FF7300;
+    color: #fff;
+}
+
+.Contact-inner-form>button:hover{
+    background-color: #ff810c;
+    border-color: #FF7300;
+}
+
+.message{
+    width: 100%;
+}
+
+.message>h2{
+    text-align: center;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: 380;
+    letter-spacing: 2.5px;
+}
