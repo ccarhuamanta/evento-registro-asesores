@@ -212,7 +212,7 @@ function Formulario({user, setUser}) {
 
         //PROD: https://audioplayer.pe/testing/sendlead
         //DEV: https://dev.audioplayer.pe/testing/sendlead
-        const url = 'https://dev.audioplayer.pe/testing/sendlead';
+        const url = 'https://audioplayer.pe/testing/sendlead';
         const params = getParamsFromURL();
 
         // console.log('Parámetros UTM de la URL:', params);
@@ -364,7 +364,7 @@ function Formulario({user, setUser}) {
             </div>
 
             <div className='Contact-inner'>
-                <h4 className='title'>Ingresa los datos</h4>
+                <h4 className='title'>Formulario</h4>
                 <form className='Contact-inner-form'>
                     <div className='Contact-inner-controls'>
                         <div className='Contact-inner-input'>
@@ -507,6 +507,7 @@ function Formulario({user, setUser}) {
                     {isSend && <div className="message"><h2>LOS DATOS FUERON ENVIADOS</h2></div>}
                 </form>
             </div>
+            
         </section>    
 
   )

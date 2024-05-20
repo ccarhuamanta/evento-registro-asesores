@@ -4,6 +4,13 @@
     padding: 0;
 } */
 
+/* .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
 .formulario-background{
     width: 100%;
     height: 100%;
@@ -97,8 +104,14 @@
 }
 
 .Contact-inner{
-    position: relative;
-    z-index: 5;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    justify-self: center;
+    /* position: relative; */
+    /* z-index: 5;
     /* background-color: coral; */
     /* width: 45vw; */
 }
@@ -128,6 +141,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 2px;
+    width: 100%;
 }
 
 .full{
@@ -168,6 +182,10 @@ textarea{
     justify-content: center;
 }
 
+.Contact-inner-input>label{
+    margin-bottom: 13px;
+}
+
 .Contact-inner-input>label, .Contact-inner-controls>label{
     font-weight: 500;
     font-size: 12pt;
@@ -203,3 +221,46 @@ textarea{
     font-weight: 380;
     letter-spacing: 2.5px;
 }
+
+@media (max-width: 2000px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 35%;
+    }
+}
+
+@media (max-width: 1900px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 40%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 70%;
+    }
+} 
+
+@media (max-width: 768px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 80%;
+    }
+} 
+
+@media (max-width: 576px) {
+    .Contact-inner {
+      justify-self: center;
+      width: 80%;
+    }
+} 
+
