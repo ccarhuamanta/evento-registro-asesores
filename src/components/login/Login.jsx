@@ -19,7 +19,8 @@ function Login({setUser}) {
       try {
           if(username === 'ccarhuamanta' && password == 'Cc4rhuam4nta2023'){
             setIsValid(true);
-            sessionStorage.setItem('user', username);
+            localStorage.setItem('user',username);
+            //sessionStorage.setItem('user', username);
             setUser([username]);
             navigate('/formulario');
           }else{
@@ -50,7 +51,8 @@ function Login({setUser}) {
 
   useEffect(() => {
     // Verificar si hay sesión activa al cargar el componente
-    const userInSession = sessionStorage.getItem('user');
+    const userInSession = localStorage.getItem('user');
+    // const userInSession = sessionStorage.getItem('user');
     if (userInSession) {
       setUser([userInSession]);
       navigate('/formulario');

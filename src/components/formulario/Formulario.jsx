@@ -14,7 +14,8 @@ function Formulario({user, setUser}) {
 
     // Comprobación de sesión al cargar el componente
     useEffect(() => {
-        const userInSession = sessionStorage.getItem('user');
+        const userInSession = localStorage.getItem('user');
+        // const userInSession = sessionStorage.getItem('user');
         if (!userInSession) {
             // Si no hay usuario en sessionStorage, redirigir al login
             navigate('/');
@@ -27,7 +28,8 @@ function Formulario({user, setUser}) {
 
     const handleLogout = () => { 
         setUser([]);
-        sessionStorage.removeItem('user');
+        localStorage.removeItem('user');
+        // sessionStorage.removeItem('user');
         navigate('/');
     }
     
@@ -335,7 +337,7 @@ function Formulario({user, setUser}) {
                 SetIsSend(true);
                 timeoutId = setTimeout(() => {
                     SetIsSend(false);
-                }, 3000);
+                }, 5000);
             });
 
             if (timeoutId && isSend) {
