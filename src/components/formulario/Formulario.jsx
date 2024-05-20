@@ -137,7 +137,7 @@ function Formulario({user, setUser}) {
             borderRadius: '3px',
             ':hover': {
                 backgroundColor: '#FFF',
-                borderColor: '#6bbbb6'
+                borderColor: '#FF7300'
             },
         }),
         placeholder: (styles) => ({
