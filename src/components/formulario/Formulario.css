@@ -84,6 +84,7 @@
     margin: 20px 4px 0 0;
     width: 28px;
     height: 28px;
+    cursor: pointer;
 }
 
 .container-button {
@@ -274,7 +275,13 @@ textarea{
       justify-self: center;
       width: 80%;
     }
-} 
+}
+
+/* @media (max-width: 360px) {
+    .Contact-inner-input>input{
+        width: 100%;
+    }
+}  */
 
 /* Menu Mobile */
 @media (max-width: 990px){
@@ -293,9 +300,11 @@ textarea{
         z-index: 10;
         border-bottom: 2px solid #fff;
         text-align: center;
+        cursor: pointer;
 
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        display: none;
+        /* transition: opacity 0.5s ease;
+        opacity: 0; */
     }
 
     .container-cerrar:hover{
@@ -304,6 +313,12 @@ textarea{
     }
  
     .container-cerrar.mostrarMobile {
-        opacity: 1;
+        /* opacity: 1; */
+        display: block;
+    }
+
+    .Contact-inner-input>input{
+        width: 100%;
+        padding-left: 0;
     }
 }

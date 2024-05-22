@@ -36,12 +36,17 @@ function Formulario({user, setUser}) {
     }
     
     const handleClick = () => {
-        if(window.innerWidth < 990){
-            setMostrarBotonMobile(!mostrarBotonMobile)
-        }else{
+        // if(window.innerWidth < 990){
+        //     setMostrarBotonMobile(!mostrarBotonMobile)
+        // }else{
             flecha === FlechaIzquierda ? setFlecha(FlechaAbajo) : setFlecha(FlechaIzquierda);
             setMostrarBoton(!mostrarBoton);
-        }
+        // }
+    }
+
+    const handleClickMobile = () => {
+        setMostrarBotonMobile(!mostrarBotonMobile);
+        // setMostrarBotonMobile(prevState => !prevState);
     }
 
     
@@ -371,13 +376,13 @@ function Formulario({user, setUser}) {
             <img className='formulario-background' src={FondoRegistro} />
             <div className='formulario-header'>
                 <div className='formulario-header-usuario'>
-                    <img className='user' src={Usuario} onClick={handleClick}/>
+                    <img className='user' src={Usuario} />
                     <h3 className='formulario-header-txt'>{user}</h3>
                 </div>
                 <div className='container-perfil'>
                     {isMobile ? (
-                        <div className='formulario-header-perfil-mobil' onClick={handleClick}>
-                            <img src={IconMenu} onClick={handleClick} />
+                        <div className='formulario-header-perfil-mobil' onClick={handleClickMobile}>
+                            <img src={IconMenu} onClick={handleClickMobile} />
                         </div>
                         ):(
                         <div className='formulario-header-perfil' onClick={handleClick}>
