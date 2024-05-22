@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import FondoRegistro from '../../assets/fondo.jpg';
-import Usuario from '../../assets/user-img.svg'
+import Usuario from '../../assets/user-img.svg';
+import IconMenu from '../../assets/icon_menu.svg';
 import FlechaIzquierda from '../../assets/flecha-izq.svg';
 import FlechaAbajo from '../../assets/flecha-baj.svg';
 import { useNavigate } from 'react-router-dom';
@@ -25,6 +26,7 @@ function Formulario({user, setUser}) {
     //Perfil
     const [flecha, setFlecha] = useState(FlechaIzquierda);
     const [mostrarBoton, setMostrarBoton] = useState(false);
+    const [mostrarBotonMobile, setMostrarBotonMobile] = useState(false);
 
     const handleLogout = () => { 
         setUser([]);
@@ -34,13 +36,19 @@ function Formulario({user, setUser}) {
     }
     
     const handleClick = () => {
-        flecha === FlechaIzquierda ? setFlecha(FlechaAbajo) : setFlecha(FlechaIzquierda);
-        setMostrarBoton(!mostrarBoton);
+        if(window.innerWidth < 990){
+            setMostrarBotonMobile(!mostrarBotonMobile)
+        }else{
+            flecha === FlechaIzquierda ? setFlecha(FlechaAbajo) : setFlecha(FlechaIzquierda);
+            setMostrarBoton(!mostrarBoton);
+        }
     }
+
     
     //Mensaje:
     const [isSend, SetIsSend] = useState(false);
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 990);
 
     //Formulario
     const [token, setToken] = useState('');
@@ -346,6 +354,18 @@ function Formulario({user, setUser}) {
         console.log('Datos Enviados');
     }
 
+    useEffect(()=>{
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 990);
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    },[])
+
     return (
         <section className='formulario'>
             <img className='formulario-background' src={FondoRegistro} />
@@ -355,14 +375,23 @@ function Formulario({user, setUser}) {
                     <h3 className='formulario-header-txt'>{user}</h3>
                 </div>
                 <div className='container-perfil'>
-                    <div className='formulario-header-perfil' onClick={handleClick}>
-                        <img className='flecha' src={flecha} onClick={handleClick}/>
-                        <p>Perfil</p>
-                    </div>
+                    {isMobile ? (
+                        <div className='formulario-header-perfil-mobil' onClick={handleClick}>
+                            <img src={IconMenu} onClick={handleClick} />
+                        </div>
+                        ):(
+                        <div className='formulario-header-perfil' onClick={handleClick}>
+                            <img className='flecha' src={flecha} onClick={handleClick}/>
+                            <p>Perfil</p>
+                        </div>
+                    )}
                     <div className={`container-button ${mostrarBoton ? 'mostrar' : ''}`}>
                         <button onClick={handleLogout}>Cerrar Sesión</button>
                     </div>
                 </div>
+            </div>
+            <div className={`container-cerrar ${mostrarBotonMobile ? 'mostrarMobile' : ''}`} onClick={handleLogout}>
+                <p>Cerrar Sesión</p>
             </div>
 
             <div className='Contact-inner'>
